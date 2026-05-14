@@ -54,7 +54,7 @@
 | 1 | `frontend/` 폴더 구조 생성 (`index.html`, `app.js`, `style.css`) | ✅ | 3개 파일 존재 확인, 브라우저에서 오류 없이 열림 확인 |
 | 2 | Tailwind CDN 연결 및 기본 레이아웃 (헤더 + 메인 영역) | ✅ | 브라우저 360px·1280px 양쪽에서 레이아웃 깨짐 없음 확인 |
 | 3 | 라이트/다크 테마 토글 구현 (`localStorage` + `prefers-color-scheme` 초기값) | ✅ | 토글 클릭 후 테마 전환, 새로고침 후 상태 유지 확인 |
-| 4 | 업무 추가 폼 구현 (`title`, `status`, `due_at`) — `POST /api/tasks` 연결 | ✅ | 폼 제출 후 201 응답, title 미입력 시 오류 메시지 표시 확인 |
+| 4 | 업무 추가 폼 구현 (`title`, `description`, `status`, `due_at`) — `POST /api/tasks` 연결 | ✅ | 폼 제출 후 201 응답, title 미입력 시 오류 메시지 표시 확인 |
 | 5 | 업무 목록 카드 렌더링 (status 배지, `D-N HH:MM`, 마감 초과 빨간색) | ✅ | 카드에 배지·마감 시각 표시, 마감 지난 항목 빨간색 표시 확인 |
 | 6 | 수정 모달 구현 (카드 클릭 → 모달 → `PUT /api/tasks/{id}`) | ✅ | 저장 후 목록 즉시 갱신, 모달 닫힘 확인 |
 | 7 | 삭제 기능 구현 (휴지통 아이콘 → 확인 다이얼로그 → `DELETE /api/tasks/{id}`) | ✅ | 확인 시 카드 제거, 취소 시 그대로 유지 확인 |
