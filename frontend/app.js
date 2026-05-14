@@ -124,15 +124,16 @@ function renderTasks() {
 
 document.getElementById('add-form').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const title   = document.getElementById('input-title').value.trim();
-  const status  = document.getElementById('input-status').value;
-  const dueAt   = document.getElementById('input-due-at').value;
-  const errEl   = document.getElementById('add-error');
+  const title       = document.getElementById('input-title').value.trim();
+  const description = document.getElementById('input-description').value.trim();
+  const status      = document.getElementById('input-status').value;
+  const dueAt       = document.getElementById('input-due-at').value;
+  const errEl       = document.getElementById('add-error');
 
   if (!title) { errEl.textContent = '업무 제목을 입력하세요'; return; }
   errEl.textContent = '';
 
-  const payload = { title, status };
+  const payload = { title, description: description || null, status };
   if (dueAt) payload.due_at = new Date(dueAt).toISOString();
 
   try {
@@ -157,9 +158,15 @@ document.getElementById('task-list').addEventListener('click', (e) => {
 
 // ── 수정 모달 ────────────────────────────────────────────────────────
 
-function openEditModal(taskId) {
-  const task = tasks.find(t => t.id === taskId);
-  if (!task) return;
+async function openEditModal(taskId) {
+  // 목록 응답엔 description 미포함 → 단건 조회로 전체 필드 가져오기
+  let task;
+  try {
+    const res = await fetch(`${API_BASE}/${taskId}`);
+    task = await res.json();
+  } catch {
+    return;
+  }
   editingTaskId = taskId;
   document.getElementById('modal-title').value       = task.title;
   document.getElementById('modal-description').value = task.description ?? '';
