@@ -13,12 +13,12 @@
 
 아래 6개 문서를 **순서대로** 읽고 내용을 파악한 뒤 작업을 시작한다.
 
-1. `docs/01-overview.md` — 프로젝트 개요 및 목표
-2. `docs/02-architecture.md` — 시스템 아키텍처
-3. `docs/03-stack.md` — 기술 스택 및 버전
-4. `docs/04-folder-structure.md` — 폴더 구조 정의
-5. `docs/05-conventions.md` — 코드 컨벤션 및 네이밍 규칙
-6. `docs/06-api-spec.md` — API 명세
+1. `docs/00-overview.md` — 전체 안내도, 문서 구조, 읽는 순서
+2. `docs/01-product.md` — 대상 사용자, 핵심 기능, 비즈니스 목표
+3. `docs/02-specs.md` — 기술 스택, 데이터 모델, API 명세
+4. `docs/03-design.md` — 화면 구성, 컴포넌트, 디자인 시스템
+5. `docs/04-tasks.md` — 개발 마일스톤, 우선순위, 진행 상태
+6. `docs/05-conventions.md` — 네이밍 규칙, 폴더 구조, 커밋 메시지 형식
 
 ---
 
@@ -37,7 +37,7 @@
 API 키, 비밀번호, 토큰 등 민감 정보는 절대 코드에 직접 작성하지 않는다. 반드시 환경 변수(`.env`)를 사용한다.
 
 ### 5. 폴더 구조 임의 변경 금지
-`docs/04-folder-structure.md`에 정의된 폴더 구조를 임의로 변경하지 않는다. 구조 변경이 필요한 경우 먼저 사용자에게 제안하고 승인을 받는다.
+`docs/05-conventions.md`에 정의된 폴더 구조를 임의로 변경하지 않는다. 구조 변경이 필요한 경우 먼저 사용자에게 제안하고 승인을 받는다.
 
 ---
 
