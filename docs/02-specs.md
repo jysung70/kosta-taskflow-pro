@@ -138,8 +138,11 @@
 | 필드 | UI 요소 | 비고 |
 |---|---|---|
 | `title` | 텍스트 입력 | 필수, 200자 제한 |
-| `due_at` | 날짜+시간 picker | 선택, 형식: `YYYY-MM-DD HH:mm` |
+| `description` | 텍스트영역 | 선택 |
 | `status` | 셀렉트 박스 | 기본값 `todo` |
+| `due_at` | 날짜+시간 picker | 선택, 형식: `YYYY-MM-DD HH:mm` |
+
+> 수정 모달에서 카드 클릭 시 `GET /api/tasks/{id}` 단건 조회로 `description` 포함 전체 필드를 로드한다.
 
 ---
 
