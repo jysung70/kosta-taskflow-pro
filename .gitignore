@@ -11,3 +11,7 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
+
+# Playwright
+.playwright-mcp/
+test-*.png
